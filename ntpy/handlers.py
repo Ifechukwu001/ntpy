@@ -3,8 +3,8 @@
 import logging
 from importlib import import_module
 
-from ntpy.request import publish
-from ntpy.backends import DEFAULT_BACKEND, BaseBackend
+from .request import publish
+from .backends import DEFAULT_BACKEND, BaseBackend
 
 MINUTE = 60
 
