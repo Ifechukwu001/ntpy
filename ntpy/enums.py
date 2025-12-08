@@ -1,5 +1,6 @@
 """ntpy enums."""
 
+import logging
 from enum import StrEnum
 
 
@@ -43,3 +44,24 @@ class Priority(StrEnum):
     DEFAULT = "3"
     HIGH = "4"
     MAX = "5"
+
+    @classmethod
+    def log_priority(cls, level: int) -> "Priority":
+        """Maps logging levels to Priority enum members.
+
+        Args:
+            level (int): The logging level.
+
+        Returns:
+            Priority: The corresponding Priority enum member.
+        """
+        if level >= logging.CRITICAL:
+            return cls.MAX
+        elif level >= logging.ERROR:
+            return cls.HIGH
+        elif level >= logging.WARNING:
+            return cls.DEFAULT
+        elif level >= logging.INFO:
+            return cls.LOW
+        else:  # DEBUG and NOTSET
+            return cls.MIN

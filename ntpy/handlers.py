@@ -3,6 +3,8 @@
 import logging
 from importlib import import_module
 
+from .enums import Priority
+from .typing import Extras
 from .request import publish
 from .backends import DEFAULT_BACKEND, BaseBackend
 
@@ -44,4 +46,7 @@ class NtpyHandler(logging.Handler):
 
         if not self.backend.has_hash(hash_value):
             self.backend.store(log_entry)
-            publish(topic=self.topic, data=log_entry, title=self.title)
+
+            extras: Extras = {"Priority": Priority.log_priority(record.levelno)}
+
+            publish(topic=self.topic, data=log_entry, title=self.title, extras=extras)
