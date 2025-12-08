@@ -1,5 +1,5 @@
 # NTPY
-A Python API Wrapper for the ntfy.sh service
+A Python API Wrapper for the [ntfy.sh](https://ntfy.sh/) service
 ---
 
 ## Get Started
@@ -43,3 +43,4 @@ A Python API Wrapper for the ntfy.sh service
 You are free to drop notes and contribute to the project.
 
 Thanks.
+
