@@ -1,8 +1,7 @@
 """ntpy backends package."""
 
 from ._base import BaseBackend
+from .redis import RedisBackend
+from .inmemory import InMemoryBackend
 
-DEFAULT_BACKEND = "ntpy.backends.inmemory.InMemoryBackend"
-
-
-__all__ = ["DEFAULT_BACKEND", "BaseBackend"]
+__all__ = ["BaseBackend", "InMemoryBackend", "RedisBackend"]

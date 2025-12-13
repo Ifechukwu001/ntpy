@@ -1,10 +1,10 @@
 [project]
 name = "ntpy"
-version = "0.2.3"
+version = "0.3.0"
 description = "ntfy.sh wrapper for Python"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = ["cachetools>=6.2.2", "httpx>=0.28.1"]
+dependencies = ["cachetools>=6.2.2", "httpx>=0.28.1", "redis>=7.0.1"]
 authors = [{ name = "Ifechukwu Ogidi", email = "ogidiifechukwu6@gmail.com" }]
 
 [tool.ruff]
@@ -23,6 +23,7 @@ extend-select = [
     "RUF",
     "ERA",
     "D",
+    "DOC",
     "PT",
 ]
 
