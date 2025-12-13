@@ -19,6 +19,8 @@
       poetry add git+https://github.com/Ifechukwu001/ntpy.git
   ```
 
+_PS: For a particular version use `git+https://github.com/Ifechukwu001/ntpy.git@<version>`. E.g `git+https://github.com/Ifechukwu001/ntpy.git@0.3.0`_
+
 ## Notes
 
 - You can access the functions for publishing to ntfy.sh (`ntpy.request.publish` and `ntpy.request.apublish`)
