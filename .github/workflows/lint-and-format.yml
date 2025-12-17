@@ -1,0 +1,24 @@
+name: Ruff Linter & Formatter
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint with Ruff
+        uses: astral-sh/ruff-action@v3
+        with:
+          version: 0.9.6
+
+      - name: Format check with Ruff
+        uses: astral-sh/ruff-action@v3
+        with:
+          version: 0.9.6
+          args: format --check --diff
