@@ -4,7 +4,13 @@ version = "0.3.0"
 description = "ntfy.sh wrapper for Python"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = ["cachetools>=6.2.2", "httpx>=0.28.1", "redis>=7.0.1"]
+dependencies = [
+    "cachetools>=6.2.2",
+    "coverage>=7.10.7",
+    "httpx>=0.28.1",
+    "pytest>=8.4.2",
+    "redis>=7.0.1",
+]
 authors = [{ name = "Ifechukwu Ogidi", email = "ogidiifechukwu6@gmail.com" }]
 
 [tool.ruff]
@@ -33,3 +39,10 @@ convention = "google"
 [tool.ruff.lint.isort]
 case-sensitive = true
 length-sort = true
+
+[tool.ruff.lint.extend-per-file-ignores]
+"tests/*" = ["S101"]
+
+[tool.coverage.run]
+command_line = "-m pytest"
+source = ["ntpy"]

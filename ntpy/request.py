@@ -23,7 +23,10 @@ async def apublish(topic: str, data: str, title: str = "", extras: Extras = {}) 
 
     try:
         async with httpx.AsyncClient() as client:
-            await client.post(f"https://ntfy.sh/{topic}", content=data, headers=headers)
+            response = await client.post(
+                f"https://ntfy.sh/{topic}", content=data, headers=headers
+            )
+            response.raise_for_status()
     except httpx.HTTPError:
         return False
 
@@ -48,7 +51,10 @@ def publish(topic: str, data: str, title: str = "", extras: Extras = {}) -> bool
 
     try:
         with httpx.Client() as client:
-            client.post(f"https://ntfy.sh/{topic}", content=data, headers=headers)
+            response = client.post(
+                f"https://ntfy.sh/{topic}", content=data, headers=headers
+            )
+            response.raise_for_status()
     except httpx.HTTPError:
         return False
 
